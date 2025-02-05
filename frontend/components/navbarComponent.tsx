@@ -25,7 +25,7 @@ const NavbarComponent: React.FC<NavbarProps> = ({ toggleSidebar, sidebarActive }
     <header className="bg-white shadow-md">
       <nav className="flex justify-between items-center w-[92%] mx-auto py-4">
         {/* Logo */}
-        <div className="relative h-[50px] w-[144px] flex items-center justify-center">
+        <div className="relative h-[40px] w-[144px] flex items-center justify-center">
           <Image
             src="/img/logo-vaya.webp"
             alt="logo-de-vaya-valla-publicidad"

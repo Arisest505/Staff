@@ -1,35 +1,49 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import HamburgerToggle from "../components/HamburgerButton";
-import Switch from "../components/Switch";
+import HamburgerToggle from "../HamburgerButton";
+import Switch from "../Switch";
 
 interface AsideBarProps {
   sidebarActive: boolean;
   toggleSidebar: () => void;
-  setIsMinimized: (state: boolean) => void; // Nueva prop para actualizar el estado en Home.tsx
+  setIsMinimized: (state: boolean) => void;
 }
 
 const AsideBar: React.FC<AsideBarProps> = ({ sidebarActive, toggleSidebar, setIsMinimized }) => {
   const [isMinimized, setIsMinimizedLocal] = useState(false);
+  const [isMobile, setIsMobile] = useState<null | boolean>(null); // Inicializamos con `null` para evitar SSR problemas
+
+  useEffect(() => {
+    // Solo se ejecuta en el cliente, no en SSR
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 500);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   const toggleMinimize = () => {
     const newState = !isMinimized;
     setIsMinimizedLocal(newState);
-    setIsMinimized(newState); // Actualiza el estado global en Home.tsx
+    setIsMinimized(newState);
   };
 
   return (
     <motion.aside
-      animate={{ width: isMinimized ? "60px" : "250px" }} // Cambia el ancho dinámicamente
+      animate={{
+        width: isMobile === null ? "250px" : isMobile && !isMinimized ? "100%" : isMinimized ? "60px" : "250px"
+      }}
       transition={{ duration: 0.3 }}
       className="fixed left-0 top-0 h-full bg-white shadow-lg z-40 p-5 flex flex-col"
     >
       {/* Botón de Hamburguesa para minimizar */}
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-end mb-4">
         <HamburgerToggle isOpen={!isMinimized} onClick={toggleMinimize} />
       </div>
 
-      {/* Si está minimizado, oculta opciones */}
+      {/* Si está minimizado o en pantalla pequeña, oculta opciones */}
       {!isMinimized && (
         <nav className="mt-4">
           <ul className="space-y-4">
