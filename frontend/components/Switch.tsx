@@ -21,7 +21,7 @@ const Switch: React.FC<SwitchProps> = ({ isChecked, onToggle }) => {
 
 const StyledWrapper = styled.div`
   .theme-checkbox {
-    --toggle-size: 16px;
+    --toggle-size: 12px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
