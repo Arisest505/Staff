@@ -18,19 +18,19 @@ const infoItems = [
     description:
       "Si tienes dudas o necesitas ayuda, envíanos un mensaje y te responderemos pronto.",
     linkText: "Enviar Email",
-    link: "mailto:info@vayapublicidad.com",
+    link: "arisescrp@gmail.com",
   },
   {
     icon: <MapPin size={28} />,
     title: "Visítanos",
     description:
-      "Lima, Perú \n Jr. Augusto B. Leguía 254, Huacho 15136 \n Calle Oucaje 174, Santiago de Surco",
+      "Lima, Perú",
   },
   {
     icon: <BookOpenText size={28} />,
     title: "Nuestro Blog",
     description:
-      "Descubre los últimos avances en diseño web y personalización en nuestro blog.",
+      "Descubre los últimos avances en diseño we, parches, actualizaciones y personalización en nuestro blog.",
     linkText: "Leer Blog",
     link: "#",
   },

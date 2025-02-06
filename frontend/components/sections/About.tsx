@@ -30,9 +30,9 @@ const AboutComponent = () => {
   const stats = [
     {
       icon: <Paintbrush size={40} />,
-      value: "+5",
+      value: "+3",
       label: "Años de experiencia",
-      description: "Llevamos más de 5 años desarrollando herramientas de personalización de páginas estáticas.",
+      description: "Llevamos más de 3 años desarrollando herramientas de personalización de páginas estáticas.",
     },
     {
       icon: <Users size={40} />,

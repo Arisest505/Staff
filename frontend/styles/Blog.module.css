@@ -35,7 +35,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
-  border-left: 5px solid #0070f3;
+  border-left: 5px solid #7200cf;
 }
 
 .blogCard:hover {
@@ -44,7 +44,7 @@
 }
 
 .icon {
-  color: #0070f3;
+  color: #7200cf;
   margin-bottom: 10px;
 }
 
@@ -61,7 +61,7 @@
 
 .tag {
   background: #e5f4ff;
-  color: #007bff;
+  color: #7200cf;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 12px;
@@ -87,7 +87,7 @@
 
 .readMore {
   font-size: 14px;
-  color: #007bff;
+  color: #7200cf;
   text-decoration: underline;
 }
 
@@ -101,7 +101,7 @@
 }
 
 .btnPrimary {
-  background: #0070f3;
+  background: #363636;
   color: white;
   padding: 10px 20px;
   border-radius: 6px;
@@ -110,5 +110,5 @@
 }
 
 .btnPrimary:hover {
-  background: #0056b3;
+  background: #585757;
 }
