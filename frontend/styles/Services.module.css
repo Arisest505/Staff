@@ -1,0 +1,66 @@
+/* 📌 General */
+.servicesSection {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0a0a0a, #222);
+  color: white;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.8;
+}
+
+/* 📌 Grid de Servicios */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+/* 📌 Tarjeta de Servicio */
+.serviceCard {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  border-left: 5px solid #0070f3;
+}
+
+.serviceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* 📌 Ícono */
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px;
+  color: #0070f3;
+}
+
+/* 📌 Título del Servicio */
+.serviceTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 📌 Descripción del Servicio */
+.serviceDescription {
+  font-size: 1rem;
+  opacity: 0.8;
+}

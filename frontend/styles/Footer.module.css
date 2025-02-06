@@ -1,0 +1,21 @@
+/* 📌 General */
+footer {
+    background: linear-gradient(135deg, #0a0a0a, #8a8989);
+    text-align: center;
+  }
+  
+  /* 📌 Iconos de Redes Sociales */
+  a:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  
+  /* 📌 Animaciones */
+  ul li {
+    transition: color 0.3s ease;
+  }
+  
+  ul li:hover {
+    color: #abbdd1;
+  }
+  
