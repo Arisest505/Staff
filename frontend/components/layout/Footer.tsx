@@ -7,7 +7,7 @@ const menuItems = [
   { title: "Inicio", icon: <Home size={18} />, link: "#inicio" },
   { title: "Servicios", icon: <Layers size={18} />, link: "#servicios" },
   { title: "Nosotros", icon: <Users size={18} />, link: "#nosotros" },
-  { title: "Clientes", icon: <FileText size={18} />, link: "#clientes" },
+ // { title: "Clientes", icon: <FileText size={18} />, link: "#clientes" },
   { title: "Blog", icon: <Globe size={18} />, link: "#blog" },
 ];
 
@@ -19,7 +19,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative bg-purple-900 text-white text-center py-12">
+    <footer className="relative bg-black text-white text-center py-12 ">
       <div className="container mx-auto px-4">
         {/* Logo con Animación */}
         <motion.div 
@@ -27,6 +27,7 @@ const Footer = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
+        
       >
        <Image
          src="/logo.svg"
@@ -34,6 +35,7 @@ const Footer = () => {
          width={180}  // 
          height={95}  // 
          className="cursor-pointer hover:scale-110 transition-transform h-[200px]" //  Aumenta un poco más la altura con Tailwind
+         style={{ color:"#ffffff" ,filter: "drop-shadow(0px 0px 5px)" }}
        />
       </motion.div>
 

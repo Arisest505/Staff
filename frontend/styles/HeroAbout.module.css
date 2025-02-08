@@ -1,0 +1,64 @@
+.hero {
+  position: relative;
+  height: 80vh; /* Reducido de 100vh a 80vh, ajusta según necesidad */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #000000, #250179, #000000); /* Ahora el degradado es en diagonal */
+  overflow: hidden;
+  padding: 2rem 0; /* Añadir un poco de espacio */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh; /* Menor altura en pantallas pequeñas */
+  }
+}
+
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #a000ff;
+}
+
+.description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.cta {
+  display: inline-block;
+  background-color: #a000ff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #7200cf;
+}
+
+.rainContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.drop {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform-origin: center;
+}
