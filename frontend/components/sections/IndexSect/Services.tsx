@@ -1,9 +1,10 @@
 "use client";
-import styles from "@/styles/Services.module.css"; // Importar CSS Module
+import styles from "@/styles/Index/Services.module.css"; // Importar CSS Module
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import VanillaTilt from "vanilla-tilt";
+const VanillaTilt = require("vanilla-tilt");
+
 import { LayoutGrid } from "lucide-react"; // Importar icono minimalista
 
 const services = [

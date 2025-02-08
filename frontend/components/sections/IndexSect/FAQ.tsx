@@ -1,5 +1,5 @@
 "use client";
-import styles from "@/styles/FAQ.module.css"; // Importar CSS Module
+import styles from "@/styles/Index/FAQ.module.css"; // Importar CSS Module
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { PaintBucket, Type, Layout, Settings } from "lucide-react"; // Iconos minimalistas

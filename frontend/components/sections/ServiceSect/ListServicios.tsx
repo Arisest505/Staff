@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import styles from "@/styles/ListaServicios.module.css";
+import styles from "@/styles/Service/ListaServicios.module.css";
 
 const ListaServicios = () => {
   const servicios = [

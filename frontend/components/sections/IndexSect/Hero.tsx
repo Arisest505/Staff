@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import styles from "@/styles/Hero.module.css";
+import styles from "@/styles/Index/Hero.module.css";
 
 const Hero: React.FC = () => {
   // Estado para la animación de partículas en el fondo

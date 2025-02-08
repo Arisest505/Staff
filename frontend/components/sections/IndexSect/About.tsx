@@ -1,18 +1,16 @@
 "use client";
-import styles from "@/styles/About.module.css"; // Importar CSS Module
+
+import styles from "@/styles/Index/About.module.css";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
-import VanillaTilt from "vanilla-tilt";
+import { useEffect } from "react";
+const VanillaTilt = require("vanilla-tilt");
 import { Paintbrush, Users, BadgeCheck, MonitorSmartphone } from "lucide-react";
 import { motion } from "framer-motion";
 
-// Deshabilitar SSR para evitar errores de hidratación
 const AboutComponent = () => {
-  const [isClient, setIsClient] = useState(false);
-
   useEffect(() => {
-    setIsClient(true);
     const tiltElements = Array.from(document.querySelectorAll(".js-tilt")) as HTMLElement[];
+
     if (tiltElements.length > 0) {
       VanillaTilt.init(tiltElements, {
         glare: true,
@@ -20,12 +18,11 @@ const AboutComponent = () => {
       });
     }
 
+    // Cleanup: destruye los efectos de tilt en desmontaje
     return () => {
       tiltElements.forEach((el) => el.vanillaTilt?.destroy());
     };
   }, []);
-
-  if (!isClient) return null; //  Solución SSR
 
   const stats = [
     {
@@ -86,7 +83,6 @@ const AboutComponent = () => {
   );
 };
 
-//  Evitar SSR
 const About = dynamic(() => Promise.resolve(AboutComponent), { ssr: false });
 
 export default About;

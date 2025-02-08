@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "@/styles/ElectAbout.module.css";
+import styles from "@/styles/About/ElectAbout.module.css";
 
 const ElectAbout = () => {
   return (

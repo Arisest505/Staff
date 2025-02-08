@@ -1,0 +1,97 @@
+/* Contenedor principal del formulario */
+.registerForm {
+    width: 100%;
+    max-width: 500px;
+    background: linear-gradient(145deg, #1e1e2f, #252533);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 5px solid rgb(0, 50, 250);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Título */
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #A000FF;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Grupo de inputs */
+  .inputGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    background-color: #2a2a3c;
+  }
+  
+  /* Iconos dentro del input */
+  .icon {
+    color: #A000FF;
+    font-size: 1.2rem;
+  }
+  
+  /* Campo de entrada */
+  .inputField {
+    flex: 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: white;
+  }
+  
+  /* Checkbox de términos */
+  .terms {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 2rem;
+  }
+  
+  /* Enlace de términos */
+  .termsLink {
+    color: #A000FF;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  /* Botón de registro */
+  .registerButton {
+    width: 100%;
+    padding: 1rem;
+    background-color: #A000FF;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .registerButton:hover {
+    background-color: #7a00e0;
+    transform: scale(1.05);
+  }
+  
+  /* Animación de fadeIn */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

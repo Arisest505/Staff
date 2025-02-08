@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import styles from "@/styles/HeroBlog.module.css";
+import styles from "@/styles/Blog/HeroBlog.module.css";
 
 const HeroBlog: React.FC = () => {
   const [drops, setDrops] = useState<{ id: number; x: number; y: number }[]>([]);

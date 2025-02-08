@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
-import styles from "@/styles/MoreServicios.module.css";
+import styles from "@/styles/Service/MoreServicios.module.css";
 
 const MoreServicios = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);

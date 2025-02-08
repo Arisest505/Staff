@@ -1,5 +1,5 @@
 "use client";
-import styles from "@/styles/MoreInfo.module.css"; // Importar CSS Module
+import styles from "@/styles/Index/MoreInfo.module.css"; // Importar CSS Module
 import { motion } from "framer-motion";
 import { Mail, MapPin, BookOpenText, LayoutTemplate } from "lucide-react"; // Iconos minimalistas
 

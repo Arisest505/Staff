@@ -1,7 +1,8 @@
 "use client";
-import styles from "@/styles/Blog.module.css"; // Importar CSS Module
+import styles from "@/styles/Index/Blog.module.css"; // Importar CSS Module
 import { useEffect, useState } from "react";
-import VanillaTilt from "vanilla-tilt";
+const VanillaTilt = require("vanilla-tilt");
+
 import { Sparkles, Globe, Megaphone } from "lucide-react"; // Importar iconos minimalistas
 
 const blogPosts = [

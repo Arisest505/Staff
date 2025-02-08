@@ -7,10 +7,10 @@ import { usePathname } from "next/navigation";
 
 const menuItems = [
   { name: "Inicio", link: "/" },
-  { name: "Servicios", link: "/servicios" },
-  { name: "Nosotros", link: "/nosotros" },
- // { name: "Clientes", link: "/clientes" },
-  { name: "Blog", link: "/blog" },
+  { name: "Servicios", link: "/Service" },
+  { name: "Nosotros", link: "/About" },
+  { name: "Blog", link: "/Blog" },
+  { name: "Login", link: "/Login" },
 ];
 
 const Header: React.FC = () => {

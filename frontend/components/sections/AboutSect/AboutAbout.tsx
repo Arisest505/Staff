@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import styles from "@/styles/AboutNosotros.module.css"; // Importar CSS Module
+import styles from "@/styles/About/AboutNosotros.module.css"; // Importar CSS Module
 
 const features = [
   { title: 'Innovación', description: 'Creamos experiencias únicas que conectan tu marca con su objetivo.' },

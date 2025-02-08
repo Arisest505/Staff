@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import styles from "@/styles/HeroServicios.module.css";
+import styles from "@/styles/Service/HeroServicios.module.css";
 
 interface Particle {
   id: number;

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import styles from "@/styles/HeroAbout.module.css";
+import styles from "@/styles/About/HeroAbout.module.css";
 
 const HeroAbout: React.FC = () => {
   const [drops, setDrops] = useState<{ id: number; x: number; y: number }[]>([]);

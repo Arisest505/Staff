@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from "@/styles/InformationBlog.module.css";
+import styles from "@/styles/Blog/InformationBlog.module.css";
 
 const InformationBlog: React.FC = () => {
   const blogs = [
