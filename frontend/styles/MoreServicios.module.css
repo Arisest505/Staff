@@ -1,0 +1,80 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .title {
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease;
+    background-color: #f9fafb;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .activeCard {
+    background-color: #e0f2fe;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    cursor: pointer;
+  }
+  
+  .content {
+    margin-top: 1rem;
+  }
+  
+  .detalle {
+    background-color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .detalle:hover {
+    background-color: #e0f2fe;
+  }
+  
+  .imageWrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .imageWrapper:hover {
+    transform: scale(1.05);
+  }
+  
+  .button {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button:hover {
+    background-color: #2563eb;
+  }
+  .card {
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease;
+    background-color: #f9fafb;
+    border-left: 5px solid #7200cf;
+    border-right: 5px solid #7200cf;
+  }

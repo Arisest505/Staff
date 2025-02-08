@@ -1,0 +1,77 @@
+.hero {
+  position: relative;
+  height: 80vh; /* Reducido de 100vh a 80vh, ajusta según necesidad */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #000, #1a1a2e);
+  overflow: hidden;
+  padding: 2rem 0; /* Añadir un poco de espacio */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh; /* Menor altura en pantallas pequeñas */
+  }
+}
+
+
+/* Fondo Animado con 3 colores */
+/* Fondo Animado en Diagonal con 3 Colores */
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, #000000, #1495ff80, #06023d); /* Ahora el degradado es en diagonal */
+  opacity: 0.6;
+}
+
+
+/* Contenedor del Contenido */
+.heroContent {
+  text-align: center;
+  color: white;
+  z-index: 10;
+  max-width: 800px;
+}
+
+/* Título Principal */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Destacado del Título */
+.highlight {
+  color: #a000ff;
+}
+
+/* Descripción */
+.description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  opacity: 0.8;
+}
+
+/* Botón CTA */
+.cta {
+  display: inline-block;
+  background-color: #9c39d6;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #7200cf;
+}
+
+/* Estrellas Fugaces */
+.particle {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 1;
+}
