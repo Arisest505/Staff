@@ -7,6 +7,10 @@
     z-index: 50;
     transition: all 0.3s ease-in-out;
     backdrop-filter: blur(10px);
+    height: 60px; /* Define una altura consistente */
+    background: #1e1e2f;
+    z-index: 1100; /* Superior al toolbar */
+
   }
   
   /* Navbar cuando se hace scroll */

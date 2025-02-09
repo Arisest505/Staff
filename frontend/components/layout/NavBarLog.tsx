@@ -9,7 +9,6 @@ import styles from "@/styles/Login/NavBarLog.module.css"; // Archivo CSS especí
 
 // 🔹 Agregamos Preview a las opciones del menú
 const menuItems = [
-  { name: "Inicio", link: "/" },
   { name: "Preview", link: "/Preview" }, // Ahora aparece en la navbar
 ];
 
@@ -32,7 +31,7 @@ const NavBarLog: React.FC = () => {
 
     console.log("Sesión cerrada"); // Depuración
 
-    // 🔹 Forzar actualización de estado en AppLayout
+    //  Forzar actualización de estado en AppLayout
     setTimeout(() => {
       window.dispatchEvent(new Event("storage"));
     }, 100);

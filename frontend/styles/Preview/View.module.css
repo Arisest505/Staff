@@ -1,0 +1,69 @@
+/* Contenedor principal de la vista */
+.view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Título principal */
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+/* Descripción debajo del título */
+.description {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Contenedor de las tarjetas */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Tarjetas */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Iconos dentro de las tarjetas */
+.card svg {
+  margin-bottom: 1rem;
+}
+
+/* Pie de página */
+.footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0.8;
+}
