@@ -1,141 +1,104 @@
 "use client";
-
-import React, { useState } from "react";
-import LoginSection from "../../components/sections/Login/LoginSection";
-import RegisterSection from "../../components/sections/Register/RegisterSection";
-import ForgotPasswordSection from "../../components/sections/ForgotPassword/ForgotPasswordSection";
+import React, { useState, useCallback } from "react";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
+import styles from "@/styles/Login/AuthNavigator.module.css";
+import LoginSection from "@/components/sections/Login/LoginSection";
+import RegisterSection from "@/components/sections/Register/RegisterSection";
+import ForgotPasswordSection from "@/components/sections/ForgotPassword/ForgotPasswordSection";
+import ResetPasswordSection from "@/components/sections/ForgotPassword/ResetPasswordSection";
+import VerifyCodeSection from "@/components/sections/ForgotPassword/VerifyCodeSection";
 
 const AuthNavigator: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("login");
+  const [email, setEmail] = useState<string>("");
+
+  const particlesInit = useCallback(async (engine: any) => {
+    await loadSlim(engine);
+  }, []);
 
   return (
-    <div
-      style={{
-        width: "100%",
-        minHeight: "100vh",
-        background: "black", // Fondo exterior más limpio
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "2rem",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          maxWidth: "700px", // Tamaño más compacto
-          minHeight: "80vh",
-          background: "black", // Fondo interior
-          boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)",
-          borderRadius: "20px",
-          padding: "2rem",
-          textAlign: "center",
-          color: "white",
+    <div className={styles["auth-container"]}>
+      {/* 🎇 Partículas dentro del auth-container */}
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          fullScreen: false, // rgb(255, 255, 255) Evita que cubra toda la pantalla
+          background: { color: "transparent" },
+          particles: {
+            number: { value: 50 },
+            color: { value: ["#A000FF", "#ff004c", "#00c2ff"] },
+            shape: { type: "circle" },
+            opacity: {
+              value: 0.6,
+              random: true,
+              anim: { enable: true, speed: 0.2, opacity_min: 0.1, sync: false },
+            },
+            size: {
+              value: 2.5,
+              random: true,
+              anim: { enable: true, speed: 0.5, size_min: 0.3, sync: false },
+            },
+            move: {
+              enable: true,
+              speed: 0.8,
+              direction: "none",
+              random: true,
+              straight: false,
+              out_mode: "out",
+              attract: { enable: false },
+            },
+            line_linked: {
+              enable: true,
+              distance: 120,
+              color: "#A000FF",
+              opacity: 0.4,
+              width: 1,
+            },
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onHover: { enable: true, mode: "grab" },
+              onClick: { enable: true, mode: "push" },
+            },
+            modes: {
+              grab: { distance: 120, line_linked: { opacity: 0.8 } },
+              push: { particles_nb: 3 },
+            },
+          },
+          retina_detect: true,
         }}
-      >
-        {/* Texto dinámico */}
-        <div
-          style={{
-            marginBottom: "2rem",
-            borderBottom: "2px solid #A000FF",
-            paddingBottom: "1rem",
-            width: "100%",
-          }}
-        >
-          {activeSection === "login" && (
-            <>
-              <h1 style={{ fontSize: "2rem", fontWeight: "bold", color: "#FFFFFF" }}>
-                ¡Bienvenido de nuevo!
-              </h1>
-              <p style={{ fontSize: "1.1rem", color: "#E0E0E0" }}>
-                Inicia sesión y continúa tu viaje con nosotros.
-              </p>
-            </>
-          )}
+        className={styles.particles}
+      />
 
-          {activeSection === "register" && (
-            <>
-              <h1 style={{ fontSize: "2rem", fontWeight: "bold", color: "#FFFFFF" }}>
-                ¡Únete a nosotros hoy!
-              </h1>
-              <p style={{ fontSize: "1.1rem", color: "#E0E0E0" }}>
-                Crea una cuenta y comienza a explorar las posibilidades.
-              </p>
-            </>
-          )}
-
-          {activeSection === "forgot-password" && (
-            <>
-              <h1 style={{ fontSize: "2rem", fontWeight: "bold", color: "#FFFFFF" }}>
-                ¿Olvidaste tu contraseña?
-              </h1>
-              <p style={{ fontSize: "1.1rem", color: "#E0E0E0" }}>
-                No te preocupes, te ayudaremos a recuperarla.
-              </p>
-            </>
-          )}
-        </div>
-
-        {/* Formulario dinámico */}
-        <div
-          style={{
-            width: "100%",
-            maxWidth: "400px",
-            padding: "1rem",
-            background: "rgba(0, 0, 0, 0.8)", // Fondo del formulario
-            borderRadius: "10px",
-          }}
-        >
+      {/* Caja de autenticación */}
+      <div className={styles["auth-box"]}>
+        <div className={styles["auth-form"]}>
           {activeSection === "login" && <LoginSection setActiveSection={setActiveSection} />}
           {activeSection === "register" && <RegisterSection setActiveSection={setActiveSection} />}
-          {activeSection === "forgot-password" && <ForgotPasswordSection setActiveSection={setActiveSection} />}
+          {activeSection === "forgot-password" && (
+            <ForgotPasswordSection setActiveSection={setActiveSection} setEmail={setEmail} />
+          )}
+          {activeSection === "verify-code" && (
+            <VerifyCodeSection setActiveSection={setActiveSection} email={email} />
+          )}
+          {activeSection === "reset-password" && (
+            <ResetPasswordSection setActiveSection={setActiveSection} email={email} />
+          )}
         </div>
 
         {/* Botones de navegación */}
-        <div
-          style={{
-            marginTop: "1rem",
-            display: "flex",
-            justifyContent: "center",
-            gap: "1rem",
-          }}
-        >
+        <div className={styles["auth-buttons"]}>
           <button
-            style={{
-              padding: "0.5rem 1rem",
-              backgroundColor: activeSection === "login" ? "#A000FF" : "transparent",
-              color: "white",
-              border: "2px solid #A000FF",
-              borderRadius: "8px",
-              cursor: "pointer",
-              fontSize: "0.9rem",
-              fontWeight: "bold",
-              transition: "background-color 0.3s ease, transform 0.3s ease",
-            }}
-            onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            className={`${styles["auth-button"]} ${activeSection === "login" ? styles["active-button"] : ""}`}
             onClick={() => setActiveSection("login")}
           >
             Login
           </button>
           <button
-            style={{
-              padding: "0.5rem 1rem",
-              backgroundColor: activeSection === "register" ? "#A000FF" : "transparent",
-              color: "white",
-              border: "2px solid #A000FF",
-              borderRadius: "8px",
-              cursor: "pointer",
-              fontSize: "0.9rem",
-              fontWeight: "bold",
-              transition: "background-color 0.3s ease, transform 0.3s ease",
-            }}
-            onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            className={`${styles["auth-button"]} ${activeSection === "register" ? styles["active-button"] : ""}`}
             onClick={() => setActiveSection("register")}
           >
             Register

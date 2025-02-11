@@ -1,18 +1,19 @@
 "use client";
-import { useState, useEffect } from "react";
+import { Dispatch, SetStateAction, useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
-import styles from "@/styles/Login/NavBarLog.module.css"; // Archivo CSS específico para esta barra
+import styles from "@/styles/Login/NavBarLog.module.css";
 
-// 🔹 Agregamos Preview a las opciones del menú
-const menuItems = [
-  { name: "Preview", link: "/Preview" }, // Ahora aparece en la navbar
-];
+interface NavBarLogProps {
+  setIsLoggedIn: Dispatch<SetStateAction<boolean>>;
+}
 
-const NavBarLog: React.FC = () => {
+const menuItems = [{ name: "Preview", link: "/Preview" }];
+
+const NavBarLog: React.FC<NavBarLogProps> = ({ setIsLoggedIn }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -24,21 +25,22 @@ const NavBarLog: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Función de Logout
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-
-    console.log("Sesión cerrada"); // Depuración
-
-    //  Forzar actualización de estado en AppLayout
-    setTimeout(() => {
-      window.dispatchEvent(new Event("storage"));
-    }, 100);
-
-    router.push("/Login");
+  //  Nueva Función para Logout usando Cookies y actualizando estado global
+  const handleLogout = async () => {
+    try {
+      await fetch("http://localhost:5000/api/auth/logout", {
+        method: "POST",
+        credentials: "include",
+      });
+  
+      setIsLoggedIn(false);
+      router.push("/login");
+      window.location.reload();
+    } catch (error) {
+      console.error(" Error al cerrar sesión:", error);
+    }
   };
-
+  
   return (
     <header className={`${styles.navbar} ${isScrolled ? styles.scrolled : styles.default}`}>
       <div className={styles.navContainer}>

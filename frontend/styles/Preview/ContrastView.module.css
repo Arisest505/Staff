@@ -1,6 +1,7 @@
+/* Barra de personalización */
 .toolbar {
   position: sticky;
-  top: 60px; /* Ajusta según la altura del NavBar */
+  top: 80px;
   width: 100%;
   background: rgba(20, 20, 20, 0.95);
   padding: 1rem;
@@ -9,8 +10,17 @@
   align-items: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1000;
+  transition: all 0.4s ease-in-out; /* Transición más fluida */
+  transform: translateY(0);
 }
 
+/* Cuando el usuario sube */
+.hidden {
+  transform: translateY(-100%);
+  transition: all 0.4s ease-in-out;
+}
+
+/*    Título */
 .title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -19,65 +29,82 @@
   margin-bottom: 10px;
 }
 
+/*    Contenedor de opciones */
 .optionsContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  max-width: 800px;
+  gap: 2rem;
+}
+/*    Secciones de fuentes y colores */
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
 }
 
+/*    Línea divisoria */
+.divider {
+  width: 2px;
+  height: 50px;
+  background: #ffffff;
+  opacity: 0.8;
+}
+
+/*    Estilos para cada ítem de color */
 .colorItem {
   display: flex;
   align-items: center;
   background: #222;
   padding: 10px;
   border-radius: 10px;
+  justify-content: space-between;
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
   transition: transform 0.2s;
+  width: 180px;
 }
 
 .colorItem:hover {
   transform: scale(1.05);
 }
 
+
+/*    Etiquetas */
 .label {
   color: #ffffff;
   font-size: 0.9rem;
-  margin-right: 10px;
 }
 
+/*    Íconos */
 .icon {
   color: #757575;
   cursor: pointer;
 }
 
+/*    Selectores de color */
 .colorPicker {
   cursor: pointer;
   background: none;
   border: none;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .colorCircle {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   border: 2px solid #fff;
-  margin-left: 10px;
 }
 
-.colorCode {
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
+/*    Opciones de fuentes */
 .fontOptions {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .fontItem {
@@ -89,24 +116,124 @@
 }
 
 .fontSelector {
-  margin-left: 10px;
   background: #444;
   color: white;
   border: none;
   padding: 5px;
+  margin-left: 10px;
+  font-size: 0.9rem;
 }
 
+/*    Botón de colores aleatorios */
 .randomButton {
-  margin-top: 10px;
-  padding: 10px;
+  padding: 8px 15px;
   background: #5900ff;
   color: white;
-  font-size: 1rem;
-  border-radius: 8px;
+  font-size: 0.9rem;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .randomButton:hover {
   background: #340088;
+}
+
+/* 🌍 RESPONSIVIDAD */
+
+/*    Tablets (1024px - 768px) */
+@media (max-width: 1024px) {
+  .optionsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .section {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .divider {
+    width: 80%;
+    height: 2px;
+  }
+
+  .colorItem {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .fontOptions {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/*    Móviles (Menos de 768px) */
+@media (max-width: 768px) {
+  .toolbar {
+    padding: 0.8rem;
+  }
+
+  .optionsContainer {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .section {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .colorItem {
+    width: 100%;
+  }
+
+  .fontSelector {
+    width: 100%;
+  }
+
+  .randomButton {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/*    Teléfonos pequeños (Menos de 480px) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .colorItem {
+    padding: 8px;
+  }
+
+  .randomButton {
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  .fontSelector {
+    font-size: 0.85rem;
+  }
+
+  .colorPicker {
+    width: 20px;
+    height: 20px;
+  }
+
+  .colorCircle {
+    width: 20px;
+    height: 20px;
+  }
 }

@@ -1,114 +1,110 @@
-/* Contenedor principal del formulario */
+/* ==================== Estilos para LoginSection ==================== */
 .loginForm {
-    width: 100%;
-    max-width: 500px;
-    background: linear-gradient(145deg, rgb(0, 0, 0), rgb(0, 0, 0));
-    border: 5px solid rgb(101, 0, 216);
-    padding: 3rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 1s ease-in-out;
-  }
-  
-  /* Título */
-  .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: #FF4B4B;
-    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Grupo de inputs */
-  .inputGroup {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: #2a2a3c;
-  }
-  
-  /* Estilos de iconos dentro del input */
-  .icon {
-    color: #FF4B4B;
-    font-size: 1.2rem;
-  }
-  
-  /* Campo de entrada */
-  .inputField {
-    flex: 1;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    font-size: 1rem;
-    color: white;
-  }
-  
-  /* Icono de mostrar contraseña */
-  .eyeIcon {
-    font-size: 1.2rem;
-    color: #FF4B4B;
-    cursor: pointer;
-  }
-  
-  /* Botón de inicio de sesión */
-  .loginButton {
-    width: 100%;
-    padding: 1rem;
-    background-color: #FF4B4B;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-  }
-  
-  .loginButton:hover {
-    background-color: #E33A3A;
-    transform: scale(1.05);
-  }
-  
-  /* Enlace de recuperar contraseña */
-  .forgotPassword {
-    display: block;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #FF4B4B;
-    text-decoration: underline;
-    margin-top: 1rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .forgotPassword:hover {
-    color: #E33A3A;
-  }
-  
-  /* Contenedor de iconos sociales */
-  .socialIcons {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-  
-  /* Estilos de iconos sociales */
-  .socialIcon {
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .socialIcon:hover {
-    transform: scale(1.1);
-  }
-  
+  width: 100%;
+  max-width: 500px;
+  background: #361a1a;
+  border: 3px solid rgb(216, 0, 72);
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+  animation: fadeIn 1s ease-in-out;
+  text-align: center;
+}
+
+/* Icono del título */
+.titleIcon {
+  font-size: 2rem;
+  color: rgb(216, 0, 72);
+}
+
+/* Título */
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+/* Campo de entrada */
+.inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid rgb(216, 0, 72);
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  background-color: #1e1e2f;
+}
+
+.icon {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+}
+
+.inputField {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1rem;
+  color: white;
+}
+
+.eyeIcon {
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Botón de inicio de sesión */
+.loginButton {
+  width: 100%;
+  padding: 1rem;
+  background-color: rgb(216, 0, 72);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loginButton:hover {
+  background-color: #70142b;
+  transform: scale(1.05);
+}
+
+/* Enlace de recuperar contraseña */
+.forgotPassword {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.forgotPassword:hover {
+  color: #a5a5a5;
+}
+
+/* Iconos sociales */
+.socialIcons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.socialIcon {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  transform: scale(1.1);
+}

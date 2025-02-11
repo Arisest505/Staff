@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Youtube, Home, Layers, Users, FileText, Globe } from "lucide-react";
-import Image from "next/image"; // ✅ Importa la imagen correctamente
+import Image from "next/image"; //  Importa la imagen correctamente
 
 const menuItems = [
   { title: "Inicio", icon: <Home size={18} />, link: "#inicio" },

@@ -1,0 +1,141 @@
+
+/*    Contenedor Principal */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  text-align: center;
+  padding: 3rem;
+  transition: background-color 0.3s ease;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/001/310/441/non_2x/panoramic-view-of-a-snowcapped-mountain-under-white-clouds-free-photo.jpg");
+  background-size: cover; /* Asegura que la imagen llene el contenedor */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat;
+  filter: brightness(85%); /* Ajustamos el brillo */
+}
+
+/* Contenedor del Texto con Fondo Dinámico */
+.textWrapper {
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 12px;
+  opacity: 0.85;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*  Título */
+.title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+/*  Descripción */
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+/*  Botones */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/*  Hover Effects */
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: scale(1.05);
+}
+
+/*    🌍 RESPONSIVIDAD 🌍 */
+
+/*  Tablets (Pantallas medianas) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .textWrapper {
+    max-width: 500px;
+    padding: 1.8rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.4rem;
+  }
+}
+
+/*  Móviles (Pantallas pequeñas) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .textWrapper {
+    max-width: 400px;
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    font-size: 0.9rem;
+    padding: 0.65rem 1.2rem;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/*  Pequeños dispositivos (Teléfonos muy pequeños) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    font-size: 0.85rem;
+    width: 100%;
+    padding: 0.6rem 1rem;
+  }
+}

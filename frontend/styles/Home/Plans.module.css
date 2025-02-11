@@ -1,0 +1,193 @@
+/*    Contenedor Principal */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3rem 5rem;
+  gap: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*    Sección de Texto */
+.textSection {
+  flex: 1;
+  max-width: 40%;
+  text-align: left;
+}
+
+/*  Títulos y Descripción */
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/*  Botón */
+.button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+/*    Sección de Tarjetas */
+.cardsSection {
+  flex: 2;
+  display: flex;
+  gap: 2rem;
+}
+
+/*  Estilo de Tarjetas */
+.card {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/*  Imágenes de las Tarjetas */
+.cardImage {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+/*  Asignación de Imágenes */
+.card:nth-child(1) .cardImage {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/New_york_times_square-terabass.jpg/800px-New_york_times_square-terabass.jpg");
+}
+
+.card:nth-child(2) .cardImage {
+  background-image: url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60");
+}
+
+.card:nth-child(3) .cardImage {
+  background-image: url("https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60");
+}
+
+/*  Contenido de la Tarjeta */
+.cardContent {
+  padding: 1rem;
+  text-align: center;
+}
+
+.cardLabel {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.cardPrice {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.cardDuration {
+  font-size: 0.9rem;
+}
+
+/*    🌍 RESPONSIVIDAD 🌍 */
+
+/*  Tablets (Pantallas medianas) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 3rem;
+  }
+
+  .textSection {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .cardsSection {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/*  Móviles (Pantallas pequeñas) */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .textSection {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    width: 100%;
+  }
+
+  .cardsSection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+/*  Pequeños dispositivos (Teléfonos muy pequeños) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .button {
+    font-size: 0.85rem;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardPrice,
+  .cardDuration {
+    font-size: 0.85rem;
+  }
+}

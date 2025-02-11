@@ -1,0 +1,213 @@
+.container {
+  text-align: center;
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 400px; /* Asegura suficiente altura */
+  perspective: 1000px; /* Mejora el efecto 3D */
+  overflow: hidden; /* Evita el desplazamiento del carrusel */
+}
+
+.card {
+  position: absolute;
+  width: 280px;
+  height: 350px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.5s ease, opacity 0.5s ease, z-index 0.5s ease;
+  opacity: 0;
+  z-index: 0;
+}
+
+.center {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 3;
+}
+
+.right1 {
+  transform: translateX(120%) scale(0.85);
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.right2 {
+  transform: translateX(240%) scale(0.75);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.left1 {
+  transform: translateX(-120%) scale(0.85);
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.left2 {
+  transform: translateX(-240%) scale(0.75);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.hidden {
+  transform: translateX(-300%);
+  opacity: 0;
+  z-index: 0;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 1rem auto;
+}
+
+.text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.role {
+  font-size: 0.9rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.navButton {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.navButton:hover {
+  transform: scale(1.1);
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+  .card {
+    width: 240px;
+    height: 320px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .carousel {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 200px;
+    height: 280px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .navigation {
+    gap: 0.5rem;
+  }
+
+  .navButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 180px;
+    height: 260px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  .text {
+    font-size: 0.8rem;
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+
+  .role {
+    font-size: 0.8rem;
+  }
+
+  .navButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+  
+  .avatar1 {
+    background-image: url("https://randomuser.me/api/portraits/men/1.jpg");
+  }
+  
+  .avatar2 {
+    background-image: url("https://randomuser.me/api/portraits/men/2.jpg");
+  }
+  
+  .avatar3 {
+    background-image: url("https://randomuser.me/api/portraits/women/3.jpg");
+  }
+  
+  .avatar4 {
+    background-image: url("https://randomuser.me/api/portraits/men/4.jpg");
+  }
+  
+  .avatar5 {
+    background-image: url("https://randomuser.me/api/portraits/women/4.jpg");
+  }
+  

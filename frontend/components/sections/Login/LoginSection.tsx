@@ -4,9 +4,10 @@ import React, { Dispatch, SetStateAction, useState } from "react";
 import axios from "axios";
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash, FaGoogle, FaGithub } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { useGoogleAuth } from "@/src/auth/googleAuth"; // ✅ Importamos Google Auth
+import { useGoogleAuth } from "@/src/auth/googleAuth"; // Importamos Google Auth
 import styles from "@/styles/Login/LoginSection.module.css"; // Importamos el CSS
-import { useGoogleLogin } from "@react-oauth/google";
+import { useRouter } from "next/navigation";
+
 interface LoginSectionProps {
   setActiveSection: Dispatch<SetStateAction<string>>;
 }
@@ -15,9 +16,9 @@ const LoginSection: React.FC<LoginSectionProps> = ({ setActiveSection }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const router = useRouter();
 
   // Integración de Google Login
-
   const googleLogin = useGoogleAuth((user) => {
     Swal.fire({
       title: "¡Inicio de sesión exitoso con Google!",
@@ -28,7 +29,7 @@ const LoginSection: React.FC<LoginSectionProps> = ({ setActiveSection }) => {
       background: "#000000",
       color: "#FFFFFF",
     });
-  
+
     setTimeout(() => {
       window.dispatchEvent(new Event("storage"));
     }, 100);
@@ -37,39 +38,41 @@ const LoginSection: React.FC<LoginSectionProps> = ({ setActiveSection }) => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:5000/api/auth/login", { email, password });
+      const res = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include", // Necesario para enviar cookies
+        body: JSON.stringify({ email, password }),
+      });
+      
+      
   
-      console.log("Datos recibidos del backend:", data); // Depuración
-  
-      if (data.token && data.user) {
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify(data.user));
-  
-        console.log("Usuario guardado en localStorage:", localStorage.getItem("user")); // Verificamos
-  
-        setTimeout(() => {
-          window.dispatchEvent(new Event("storage"));
-        }, 100);
-  
-        Swal.fire({
-          title: "¡Inicio Exitoso!",
-          text: "Bienvenido Nuevamente",
-          icon: "success",
-          confirmButtonText: "Aceptar",
-          confirmButtonColor: "#A000FF",
-          background: "#000000",
-          color: "#FFFFFF",
-          timer: 3000,
-        });
-      } else {
-        throw new Error("No se recibió un token o usuario");
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Error desconocido, intente de nuevo.");
       }
+  
+      const data = await res.json();
+  
+      // Ya no guardamos el token, el backend lo almacena en la cookie
+      Swal.fire({
+        title: "¡Inicio Exitoso!",
+        text: "Bienvenido Nuevamente",
+        icon: "success",
+        confirmButtonText: "Aceptar",
+        confirmButtonColor: "#A000FF",
+        background: "#000000",
+        color: "#FFFFFF",
+        timer: 3000,
+      }).then(() => {
+        router.push("/Preview"); // Redirige a la vista Preview
+      });
     } catch (error: any) {
       console.error("Error al iniciar sesión:", error);
   
       Swal.fire({
         title: "Error al iniciar sesión",
-        text: error.response?.data?.error || "Error desconocido, intente de nuevo.",
+        text: error.message || "Error desconocido, intente de nuevo.",
         icon: "error",
         confirmButtonText: "Reintentar",
         confirmButtonColor: "#FF4B4B",
@@ -79,7 +82,6 @@ const LoginSection: React.FC<LoginSectionProps> = ({ setActiveSection }) => {
     }
   };
   
-
   return (
     <form onSubmit={handleLogin} className={styles.loginForm}>
       <h2 className={styles.title}>Iniciar Sesión</h2>

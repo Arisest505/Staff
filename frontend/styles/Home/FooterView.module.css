@@ -1,0 +1,131 @@
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .background {
+    max-width: 1200px;
+    width: 90%;
+    background: url("https://via.placeholder.com/1440x400") center center / cover no-repeat;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .subscription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .input {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid;
+    transition: border-color 0.3s ease;
+  }
+  
+  .subscribeButton {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .menuItem {
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .icon {
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .icon:hover {
+    transform: scale(1.1);
+  }
+  
+  /* --- RESPONSIVIDAD --- */
+  @media (max-width: 768px) {
+    .subscription {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  
+    .input {
+      width: 90%;
+    }
+  
+    .menu {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  
+    .socialIcons {
+      flex-direction: row;
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .background {
+      width: 95%;
+      padding: 1.5rem;
+    }
+  
+    .title {
+      font-size: 1.8rem;
+    }
+  
+    .input {
+      font-size: 0.9rem;
+    }
+  
+    .subscribeButton {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+    }
+  
+    .menu {
+      font-size: 0.9rem;
+    }
+  
+    .socialIcons {
+      font-size: 1.2rem;
+    }
+  }
+  
